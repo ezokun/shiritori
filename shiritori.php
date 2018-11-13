@@ -41,7 +41,8 @@ function check_word($word, $target)
         // データ取得
         $sql = 'SELECT name, reading, first_clean, last_clean_long '.
                 'FROM word WHERE name = ? order by cost';
-        $pdo = new PDO('sqlite:' . __DIR__ . DIRECTORY_SEPARATOR . 'db' . DIRECTORY_SEPARATOR . 'word_neologd.sqlite3');
+        $pdo = new PDO('sqlite:' . __DIR__ . DIRECTORY_SEPARATOR . 'db' . DIRECTORY_SEPARATOR . 'word_ipadic.sqlite3');
+        // $pdo = new PDO('sqlite:' . __DIR__ . DIRECTORY_SEPARATOR . 'db' . DIRECTORY_SEPARATOR . 'word_neologd.sqlite3');
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$word]);
         $results = $stmt->fetchAll();
