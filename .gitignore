@@ -1,2 +1,4 @@
 db/word_neologd.sqlite3
 db/word_ipadic.sqlite3
+.vscode/.ropeproject/config.py
+.vscode/.ropeproject/objectdb

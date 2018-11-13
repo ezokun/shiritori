@@ -1,6 +1,12 @@
+"""
+履歴保存のDB作成
+"""
 import sqlite3
 
 def main():
+    """
+    メイン
+    """
     # DBファイル名
     dbname = 'history.sqlite3'
     # DB接続・カーソル取得

@@ -1,7 +1,13 @@
+"""
+指定した文字の取得位置を取得し、一つカウントアップする
+"""
 import sys
 import sqlite3
 
 def main(check_word):
+    """
+    メイン
+    """
     dbname = './db/history.sqlite3'
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()

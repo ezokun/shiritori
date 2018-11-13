@@ -1,6 +1,12 @@
+"""
+履歴DBリセット
+"""
 import sqlite3
 
 def main():
+    """
+    メイン
+    """
     dbname = './db/history.sqlite3'
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()

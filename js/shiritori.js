@@ -21,12 +21,10 @@ $(function(){
     .done()
     .fail(ajax_fail)
     .always(ajax_always);
-    
 });
 
 // ボタンクリック時のイベント
 function button_click_event() {
-
     var word = $('#word').val();
     $('#word').val('').focus();
 

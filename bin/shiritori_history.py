@@ -1,7 +1,13 @@
+"""
+単語履歴DBの検索および登録
+"""
 import sys
 import sqlite3
 
 def main(check_word):
+    """
+    メイン
+    """
     dbname = './db/history.sqlite3'
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()

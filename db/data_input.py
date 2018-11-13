@@ -1,3 +1,8 @@
+"""
+辞書DBのデータ登録
+Mecabおよびmecab-ipadic-NEologdから
+名詞系のcsvを取得して実行する必要がある
+"""
 import sqlite3
 import csv
 
@@ -39,6 +44,9 @@ def change_long(convert_word):
     return LONG_LIST[1][LONG_LIST[0].index(convert_word)]
 
 def main():
+    """
+    メイン
+    """
     # DBファイル名
     dbname = 'word_neologd.sqlite3'
     # DB接続・カーソル取得
