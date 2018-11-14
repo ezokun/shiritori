@@ -10,10 +10,10 @@ def main():
     dbname = './db/history.sqlite3'
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()
-    cur.execute('delete from HISTORY')
-    cur.execute('delete from COUNT')
-    cur.execute('insert into HISTORY values(?)', ('シリトリ',))
-    cur.execute('insert into COUNT values(?, ?)', ('リ', '1'))
+    cur.execute('DELETE FROM HISTORY')
+    cur.execute('DELETE FROM COUNT')
+    cur.execute('INSERT INTO HISTORY VALUES(?)', ('シリトリ',))
+    cur.execute('INSERT INTO COUNT VALUES(?, ?)', ('リ', '1'))
     conn.commit()
     conn.close()
 

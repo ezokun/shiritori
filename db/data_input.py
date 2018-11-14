@@ -54,11 +54,11 @@ def main():
     cur = conn.cursor()
 
     # 挿入用SQL
-    insert_sql = 'insert into ' + \
+    insert_sql = 'INSERT INTO ' + \
                     'word (name, reading, count, ' + \
                     'first, last, first_clean, last_large, last_clean, ' + \
                     'last_large_long, last_clean_long, cost) ' + \
-                    'values (?,?,?,?,?,?,?,?,?,?,?)'
+                    'VALUES (?,?,?,?,?,?,?,?,?,?,?)'
 
     file_list = ['./data/Noun.adjv.csv',
                  './data/Noun.adverbal.csv',

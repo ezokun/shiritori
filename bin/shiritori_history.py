@@ -11,10 +11,10 @@ def main(check_word):
     dbname = './db/history.sqlite3'
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()
-    results = cur.execute('select count(word) from HISTORY where word = ?', (check_word,))
+    results = cur.execute('SELECT COUNT(word) FROM HISTORY WHERE word = ?', (check_word,))
     count = results.fetchone()[0]
     if count == 0:
-        cur.execute('insert into HISTORY values(?)', (check_word,))
+        cur.execute('INSERT INTO HISTORY VALUES(?)', (check_word,))
         conn.commit()
     conn.close()
     print(count)

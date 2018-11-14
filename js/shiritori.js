@@ -121,7 +121,7 @@ function disp_answer(name, reading, last) {
 // メッセージ表示
 function disp_message(message, isCPU) {
     if (isCPU) {
-        message = '<div class="balloon6 new"><div class="faceicon">' +
+        message = '<div class="balloon new"><div class="faceicon">' +
                   '<img src="./img/robot.png"></div>' +
                   '<div class="chatting"><div class="says"><p>' +
                   message + '</p></div></div></div>';

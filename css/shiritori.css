@@ -19,12 +19,12 @@ input, button {
 }
   
 /*以下、②左側のコメント*/
-.balloon6 {
+.balloon {
     width: 100%;
     margin: 10px 0;
     overflow: hidden;
 }
-.balloon6 .faceicon {
+.balloon .faceicon {
     float: left;
     margin-right: -50px;
     width: 50px;
@@ -34,12 +34,12 @@ input, button {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
 }
-.balloon6 .faceicon img{
+.balloon .faceicon img{
     width: 100%;
     height: auto;
     border-radius: 50%;
 }
-.balloon6 .chatting {
+.balloon .chatting {
     width: 100%;
     text-align: left;
 }
