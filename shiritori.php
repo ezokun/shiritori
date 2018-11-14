@@ -71,7 +71,8 @@ function check_word($word, $target)
             else {
                 $last_nn = FALSE;
                 // 履歴チェック
-                exec('python ./bin/shiritori_history.py ' . $result['reading'],
+                exec('python ./bin/shiritori_history.py ' . 
+                        mb_convert_encoding($result['reading'], "CP932"),
                         $history_count);
                 // 履歴にない場合は取得して検索終了
                 if ($history_count[0] == 0) {
@@ -120,7 +121,8 @@ function get_word($first) {
 
     while(TRUE) {
         // 指定文字のDB取得回数
-        exec('python ./bin/shiritori_count.py ' . $first, $count);
+        exec('python ./bin/shiritori_count.py ' . 
+                mb_convert_encoding($first, "CP932"), $count);
         try {
             // データ取得
             $sql = 'SELECT name, reading, first_clean, last_clean_long '. 
@@ -138,14 +140,15 @@ function get_word($first) {
         if (count($results) === 0) {
             $return_array['message'] = '※「' + $first + 
                     '」で始まる言葉をもう知りません。私の負けです。'; 
-            return $return_array;
+            break;
         }
 
         $result = $results[0];
 
         // 履歴チェック
-        exec('python ./bin/shiritori_history.py ' . $result['reading'],
-        $history_count);
+        exec('python ./bin/shiritori_history.py ' . 
+                mb_convert_encoding($result['reading'], "CP932"),
+                $history_count);
 
         if ($history_count[0] == 0) {
             $return_array['name'] = htmlspecialchars($result['name'], ENT_QUOTES);

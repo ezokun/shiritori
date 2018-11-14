@@ -11,8 +11,6 @@ def main(check_word):
     dbname = './db/history.sqlite3'
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()
-    # execで連携する場合、文字化けが発生する
-    check_word = check_word.encode('cp932')
     results = cur.execute('select count from COUNT where reading = ?', (check_word,))
     result = results.fetchone()
     if result is None:
