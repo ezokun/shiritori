@@ -72,7 +72,8 @@ function check_word($word, $target)
                 $last_nn = FALSE;
                 // 履歴チェック
                 exec('python ./bin/shiritori_history.py ' . 
-                        mb_convert_encoding($result['reading'], "CP932"),
+                        $result['reading'],
+                        // mb_convert_encoding($result['reading'], "CP932"),
                         $history_count);
                 // 履歴にない場合は取得して検索終了
                 if ($history_count[0] == 0) {
@@ -122,7 +123,8 @@ function get_word($first) {
     while(TRUE) {
         // 指定文字のDB取得回数
         exec('python ./bin/shiritori_count.py ' . 
-                mb_convert_encoding($first, "CP932"), $count);
+                $first, $count);
+                // mb_convert_encoding($first, "CP932"), $count);
         try {
             // データ取得
             $sql = 'SELECT name, reading, first_clean, last_clean_long '. 
@@ -147,7 +149,8 @@ function get_word($first) {
 
         // 履歴チェック
         exec('python ./bin/shiritori_history.py ' . 
-                mb_convert_encoding($result['reading'], "CP932"),
+                $result['reading'],
+//                mb_convert_encoding($result['reading'], "CP932"),
                 $history_count);
 
         if ($history_count[0] == 0) {
